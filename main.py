@@ -81,11 +81,11 @@ def upload_form():
     return render_template('upload_form.html')
 
 # Route for processing the uploaded image
-@app.route('/', methods=['POST'])
+@app.route('/process_form', methods=['POST'])
 def process_form():
     file = request.files['image_file']
     results = process_image(file)
-    return render_template('results.html', results=results)
+    return render_template('results.html', results=request.form['results'])
 
 if __name__ == '__main__':
     app.run(debug=True)

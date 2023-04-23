@@ -29,17 +29,18 @@
 
         </div>
         <div class="upload">
-            
-            <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
-                <p>
-                    <label for="file">Upload an image:</label>
-                    <input type="file" name="image_file" id="file">
-                    <h4>or drop a file</h4>
-                </p>
-                <p>
-                    <input type="submit" name="submit" value="Submit">
-                </p>
-            </form>
+            <div class="uploadSub"> 
+                <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
+                    <div>
+                        <label for="file">Upload an image:</label>
+                        <input type="file" name="image_file" id="file">
+                        <h4>or drop a file</h4>
+                    </div>
+                    <p>
+                        <input type="submit" name="submit" value="Submit">
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>License Plate Recognition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="header">License Plate Recognition</div>
+        <div>How to use <img src="../static/drop.png"></div>
+    </div>
+    
+    <div class="container">
+        <div class="carContainer">
+            <div>
+                <img src="../static/carimg.png">
+                <h4>HJG 5419</h4>
+            </div>
+            <div style="margin-top: 60px; margin-left: 20px;">
+                <img src="../static/carimg2.png">
+                <h4>J389 NLT</h4>
+            </div>
+
+        </div>
+        <div class="upload">
+            
+            <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
+                <p>
+                    <label for="file">Upload an image:</label>
+                    <input type="file" name="image_file" id="file">
+                    <h4>or drop a file</h4>
+                </p>
+                <p>
+                    <input type="submit" name="submit" value="Submit">
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

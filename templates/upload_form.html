@@ -30,7 +30,7 @@
         </div>
         <div class="upload">
             <div class="uploadSub"> 
-                <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
+                <form method="POST" action="process_form" enctype="multipart/form-data">
                     <div>
                         <label for="file">Upload an image:</label>
                         <input type="file" name="image_file" id="file">

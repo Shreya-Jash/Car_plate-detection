@@ -4,47 +4,67 @@
 <head>
     <meta charset="utf-8">
     <title>License Plate Recognition</title>
+    <link rel="icon" type="image/x-icon" href="../assests/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
 </head>
 
 <body>
-    <div class="nav">
-        <div class="header">License Plate Recognition</div>
-        <div>How to use <img src="../static/drop.png"></div>
-    </div>
-    
-    <div class="container">
-        <div class="carContainer">
-            <div>
-                <img src="../static/carimg.png">
-                <h4>HJG 5419</h4>
-            </div>
-            <div style="margin-top: 60px; margin-left: 20px;">
-                <img src="../static/carimg2.png">
-                <h4>J389 NLT</h4>
-            </div>
-
+    <!-- Navbar -->
+    <nav>
+        <img src="../static/Logo.png" alt="logo1" class="log">
+        
+        <div class="main-nav">
+            <ul class="st">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">How to use<img src="../static/drop.png"></a></li>
+            </ul>
         </div>
-        <div class="upload">
-            <div class="uploadSub"> 
-                <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
-                    <div>
-                        <label for="file">Upload an image:</label>
-                        <input type="file" name="image_file" id="file">
-                        <h4>or drop a file</h4>
-                    </div>
-                    <p>
-                        <input type="submit" name="submit" value="Submit">
-                    </p>
-                </form>
+    </nav>
+
+    <section class="uploadbody">
+
+        <div class="heading">License Plate Recognition</div>
+
+        <div class="container">
+            <div class="carContainer">
+                <div>
+                    <img src="../static/carimg.png">
+                    <h4>HJG 5419</h4>
+                </div>
+                <div style="margin-top: 60px; margin-left: 20px;">
+                    <img src="../static/carimg2.png">
+                    <h4>J389 NLT</h4>
+                </div>
+
+            </div>
+            <div class="upload">
+                <div class="uploadSub">
+                    <form method="POST" action="{{ url_for('upload_form') }}" enctype="multipart/form-data">
+                        <div class="uploaddiv">
+                            <label for="file">Upload a vehicle image:</label>
+                            <div class="uploadBtn">
+                                <input type="file" name="image_file" id="file" class="btn">
+                            </div>
+                            <h4>or drop a file</h4>
+                        </div>
+                        <p>
+                            <input type="submit" name="submit" value="Submit" class="submit">
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-
-
+    </section>
 </body>
+
+<!-- footer section -->
+<footer>
+    <div class="foot">2023 &#169;NumVision. All Right Reserved.</div>
+</footer>
 
 </html>

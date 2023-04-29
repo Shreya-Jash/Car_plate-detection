@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
     <title>License Plate Recognition Results</title>
 </head>
+
 <body>
-    <h1>License Plate Recognition Results</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>License Plate</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for result in results %}
-                <tr>
-                    <td>{{ result }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="../static/Logo.png" alt="logo" class="logo">\
+
+        <div class="main-nav">
+            <ul class="st">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">How to use<img src="../static/drop.png"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Result Body -->
+    <section class="result">
+
+        <div class="header">
+            <div class="title">License Plate Recognition</div>
+        </div>
+        <h4>The Number Plate of the given car in the image is:</h4>
+
+        {% for result in results %}
+        <div class="output">
+            <div class="display">{{ result }}</div>
+        </div>
+        {% endfor %}
+
+        <h3>Thanks for using NumVision! : &#41; &#41;</h3>
+    </section>
 </body>
+
+<!-- footer section -->
+<footer>
+    <div class="foot">2023 &#169;NumVision. All Right Reserved.</div>
+</footer>
+
 </html>
